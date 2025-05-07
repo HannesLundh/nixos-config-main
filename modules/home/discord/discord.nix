@@ -1,11 +1,13 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # discord
-    # (discord.override {
-    #  withVencord = true;
-    # })
-    webcord-vencord
+    # Uncomment the following line to enable Discord with Vencord
+    discord
+    (discord.override {
+      withVencord = true;
+    })
+    # Alternatively, you can use WebCord with Vencord
+    # webcord-vencord
   ];
   xdg.configFile."Vencord/themes/gruvbox.theme.css".source = ./gruvbox.css;
 }
