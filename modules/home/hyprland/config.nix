@@ -21,7 +21,7 @@
       ];
 
       input = {
-        kb_layout = "se";
+        kb_layout = "se"; # Change to "sv-latin1" if preferred
         numlock_by_default = true;
         repeat_delay = 300;
         follow_mouse = 0;

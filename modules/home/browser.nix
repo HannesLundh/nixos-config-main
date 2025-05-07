@@ -9,6 +9,7 @@
     with pkgs;
     [
       firefox
+      # pkgs.librewolf
     ]
   );
 }
