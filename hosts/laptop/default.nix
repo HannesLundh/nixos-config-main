@@ -10,10 +10,14 @@
     brightnessctl
     cpupower-gui
     powertop
+    bluez
+    blueman
   ];
 
   services = {
     power-profiles-daemon.enable = true;
+
+    blueman.enable = true;
 
     upower = {
       enable = true;
