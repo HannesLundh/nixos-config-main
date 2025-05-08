@@ -19,8 +19,11 @@
 
         "hyprlock"
       ];
-
-      monitor = "HDMI-A-1,1920x1080@60,3840x0,1";
+      monitor = [
+        "eDP-2, 1680x1050@165, 2560x1080, 1"
+        "DP-3, 2560x1440@60, 0x0, 1"
+        "HDMI-A-1,1920x1080@60,2560x0, 1"
+      ];
 
       input = {
         kb_layout = "se";
