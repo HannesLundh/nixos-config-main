@@ -142,7 +142,7 @@
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
         "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen-beta'"
+        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] firefox'"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
