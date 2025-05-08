@@ -2,7 +2,7 @@
 
 init() {
     # Vars
-    CURRENT_USERNAME='frostphoenix'
+    CURRENT_USERNAME='hannes'
 
     # Colors
     NORMAL=$(tput sgr0)
@@ -82,16 +82,6 @@ get_host() {
     confirm
 }
 
-aseprite() {
-    # whether to install aseprite or not
-    echo -en "Disable ${GREEN}Aseprite${NORMAL} (faster install) ? [${GREEN}y${NORMAL}/${RED}n${NORMAL}]: "
-    read -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        return
-    fi
-    sed -i '3s/  /  # /' modules/home/aseprite/aseprite.nix
-}
 
 install() {
     echo -e "\n${RED}START INSTALL PHASE${NORMAL}\n"
@@ -133,7 +123,6 @@ main() {
     set_username
     get_host
 
-    aseprite
     install
 }
 

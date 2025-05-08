@@ -10,7 +10,6 @@
     brightnessctl
     cpupower-gui
     powertop
-    discord
   ];
 
   services = {

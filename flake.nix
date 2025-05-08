@@ -26,7 +26,7 @@
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
-    # zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
@@ -45,7 +45,7 @@
   outputs =
     { nixpkgs, self, ... }@inputs:
     let
-      username = "hannes";
+      username = "frostphoenix";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
