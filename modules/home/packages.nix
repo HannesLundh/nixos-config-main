@@ -111,6 +111,9 @@ in
       # Onedrive
       onedrive
 
+      # Keepass
+      keepass
+
       inputs.alejandra.defaultPackage.${system}
     ]
   );
