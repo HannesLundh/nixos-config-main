@@ -3,8 +3,8 @@
   programs.git = {
     enable = true;
 
-    userName = "Frost-Phoenix";
-    userEmail = "67cyril6767@gmail.com";
+    userName = "Hannes Lundh";
+    userEmail = "hanneslundh1996@gmail.com";
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -14,7 +14,7 @@
       pull.ff = "only";
       color.ui = true;
       url = {
-        "https://github.com/frost-phoenix/".insteadOf = "fp:";
+        "https://github.com/hanneslundh/".insteadOf = "fp:";
         "https://github.com/".insteadOf = "gh:";
       };
       core.excludesFile = "/home/${username}/.config/git/.gitignore";
@@ -34,7 +34,7 @@
   home.packages = [ pkgs.gh ]; # pkgs.git-lfs
 
   xdg.configFile."git/.gitignore".text = ''
-      .vscode
+    .vscode
   '';
 
   programs.zsh.shellAliases = {
