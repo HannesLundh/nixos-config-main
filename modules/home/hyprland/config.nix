@@ -25,6 +25,10 @@
         "HDMI-A-1,1920x1080@60,2560x0, 1"
       ];
 
+      env = [
+        "WLR_NO_HARDWARE_CURSORS,1"
+      ];
+
       input = {
         kb_layout = "se";
         numlock_by_default = true;
@@ -218,6 +222,10 @@
         "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
 
+        # switch workspace to monitor left or right
+        "$mainMod ALT, left, movecurrentworkspacetomonitor, l"
+        "$mainMod ALT, right, movecurrentworkspacetomonitor, r"
+
         # window control
         "$mainMod SHIFT, left, movewindow, l"
         "$mainMod SHIFT, right, movewindow, r"
@@ -228,11 +236,6 @@
         "$mainMod CTRL, right, resizeactive, 80 0"
         "$mainMod CTRL, up, resizeactive, 0 -80"
         "$mainMod CTRL, down, resizeactive, 0 80"
-
-        "$mainMod ALT, left, moveactive,  -80 0"
-        "$mainMod ALT, right, moveactive, 80 0"
-        "$mainMod ALT, up, moveactive, 0 -80"
-        "$mainMod ALT, down, moveactive, 0 80"
 
         # media and volume controls
         # ",XF86AudioMute,exec, pamixer -t"
@@ -361,7 +364,6 @@
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
 
       xwayland {
         force_zero_scaling = true
