@@ -14,13 +14,12 @@
     blueman
   ];
 
+  networking.networkmanager.enable = true;
+
   services = {
     power-profiles-daemon.enable = true;
 
-    xserver.videoDrivers = [
-      "nvidia"
-    ];
-
+    xserver.videoDrivers = [ "nvidia" ];
     blueman.enable = true;
 
     upower = {
@@ -53,6 +52,25 @@
 
       # PCIE_ASPM_ON_AC = "default";
       # PCIE_ASPM_ON_BAT = "powersupersave";
+    };
+  };
+
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+
+    graphics = {
+      enable = true;
+    };
+
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      open = true;
+      nvidiaSettings = true;
     };
   };
 
