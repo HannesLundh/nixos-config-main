@@ -12,6 +12,7 @@
     powertop
     bluez
     blueman
+    nvtopPackages.panthor
   ];
 
   networking.networkmanager.enable = true;
