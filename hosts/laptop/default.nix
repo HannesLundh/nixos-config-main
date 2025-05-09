@@ -17,6 +17,10 @@
   services = {
     power-profiles-daemon.enable = true;
 
+    xserver.videoDrivers = [
+      "nvidia"
+    ];
+
     blueman.enable = true;
 
     upower = {
