@@ -21,8 +21,8 @@
       ];
       monitor = [
         "eDP-1, 1680x1050@165, 2560x1080, 1"
-        "DP-2, 2560x1440@60, 0x0, 1"
-        "HDMI-A-1,1920x1080@60,2560x0, 1"
+        "HDMI-A-1, 2560x1440@60, 0x0, 1"
+        "DP-2,1920x1080@60,2560x0, 1"
       ];
 
       env = [
@@ -152,6 +152,7 @@
         "ALT, Return, exec, [float; size 1111 700] ghostty"
         "$mainMod SHIFT, Return, exec, [fullscreen] ghostty"
         "$mainMod, B, exec, hyprctl dispatch exec 'firefox'"
+        "$mainMod SHIFT, B, exec, hyprctl dispatch split r && firefox"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -168,7 +169,7 @@
         "$mainMod, E, exec, nemo"
         "ALT, E, exec, hyprctl dispatch exec '[float; size 1111 700] nemo'"
         "$mainMod SHIFT, E, exec, hyprctl dispatch exec '[float; size 1111 700] ghostty -e yazi'"
-        "$mainMod SHIFT, B, exec, toggle_waybar"
+        #"$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
