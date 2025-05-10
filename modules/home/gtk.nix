@@ -16,8 +16,8 @@ in
     noto-fonts-emoji
     fantasque-sans-mono
     maple-mono.truetype-autohint
-    # monolisa
-    # monolisa-nerd
+    monolisa
+    monolisa-nerd
   ];
 
   gtk = {
