@@ -20,9 +20,9 @@
         "hyprlock"
       ];
       monitor = [
-        "eDP-1, 1680x1050@165, 2560x1080, 1"
-        "HDMI-A-1, 2560x1440@60, 0x0, 1"
-        "DP-2,1920x1080@60,2560x0, 1"
+        "eDP-1, 2560x1600@60, 1920x1080, auto"
+        "HDMI-A-1, 1920x1080@60, 0x0, auto"
+        "DP-2,1920x1080@60,1920x0, auto"
       ];
 
       env = [
@@ -226,6 +226,8 @@
         # switch workspace to monitor left or right
         "$mainMod ALT, left, movecurrentworkspacetomonitor, l"
         "$mainMod ALT, right, movecurrentworkspacetomonitor, r"
+        "$mainMod ALT, up, movecurrentworkspacetomonitor, u"
+        "$mainMod ALT, down, movecurrentworkspacetomonitor, d"
 
         # window control
         "$mainMod SHIFT, left, movewindow, l"
