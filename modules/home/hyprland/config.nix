@@ -176,7 +176,7 @@
         "$mainMod, N, exec, swaync-client -t -sw"
         "CTRL SHIFT, Escape, exec, hyprctl dispatch exec '[workspace 9] missioncenter'"
         "$mainMod, equal, exec, woomer"
-        "$mainMod SHIFT, K, exec, /etc/profiles/per-user/hannes/bin/keepass"
+        "$mainMod SHIFT, K, exec, ~/nixos-config-main/modules/home/scripts/scripts/toggle_keepass"
         # "$mainMod SHIFT, W, exec, vm-start"
         "$mainMod SHIFT, P, exec, parsec"
 
