@@ -25,7 +25,6 @@
   networking.networkmanager.enable = true;
 
   services = {
-    # power-profiles-daemon.enable = true;
     auto-epp.enable = true;
 
     xserver.videoDrivers = [ "nvidia" ];
@@ -55,6 +54,8 @@
   };
 
   hardware = {
+    enableRedistributableFirmware = true;
+
     bluetooth = {
       enable = true;
       powerOnBoot = true;
