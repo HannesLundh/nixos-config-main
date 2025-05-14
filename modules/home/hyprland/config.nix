@@ -178,6 +178,7 @@
         "$mainMod, equal, exec, woomer"
         "$mainMod SHIFT, K, exec, /etc/profiles/per-user/hannes/bin/keepass"
         # "$mainMod SHIFT, W, exec, vm-start"
+        "$mainMod SHIFT, P, exec, parsec"
 
         # screenshot
         ",Print, exec, screenshot --copy"
