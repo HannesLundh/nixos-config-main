@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP_NAME="KeePass2"
-CMD="/etc/profiles/per-user/hannes/bin/keepass"
+CMD="keepass"
 
 # Get the current workspace
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
