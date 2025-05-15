@@ -22,6 +22,9 @@ let
   toggle_keepass = pkgs.writeScriptBin "toggle_keepass" (
     builtins.readFile ./scripts/toggle_keepass.sh
   );
+  hide_keepass_on_copy = pkgs.writeScriptBin "hide_keepass_on_copy" (
+    builtins.readFile ./scripts/hide_keepass_on_copy.sh
+  );
 
   maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
 
@@ -58,6 +61,7 @@ in
     toggle_waybar
     toggle_float
     toggle_keepass
+    hide_keepass_on_copy
 
     maxfetch
 
