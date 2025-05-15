@@ -2,12 +2,13 @@
 
 APP_NAME="KeePassXC"
 CMD="/etc/profiles/per-user/hannes/bin/keepassxc"
+GREP="keepassxc"
 
 # Get the current workspace
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
 
 # Check if it's already running
-if pgrep -af "$APP_NAME" > /dev/null; then
+if pgrep -af "$GREP" > /dev/null; then
     # Find and manipulate window
     WIN_ID=$(hyprctl clients -j | jq -r ".[] | select(.class==\"$APP_NAME\") | .address")
     if [ -n "$WIN_ID" ]; then
