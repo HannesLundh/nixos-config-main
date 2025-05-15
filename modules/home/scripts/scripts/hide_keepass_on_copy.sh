@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-APP_NAME="KeePass2"
+APP_NAME="KeePassXC"
 TARGET_WS="9"
 LAST_CLIP=""
 
