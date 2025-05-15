@@ -36,7 +36,7 @@ else
             # Make it floating
             hyprctl dispatch focuswindow address:$WIN_ID
             hyprctl dispatch togglefloating
-            hyprctl dispatch resizeactive exact 500 500
+            hyprctl dispatch resizeactive exact 500 300
             hyprctl dispatch centerwindow
             break
         fi
