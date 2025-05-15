@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 APP_NAME="KeePass2"
 CMD="/etc/profiles/per-user/hannes/bin/keepass"
