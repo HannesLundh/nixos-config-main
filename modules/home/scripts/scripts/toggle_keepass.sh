@@ -18,7 +18,9 @@ if pgrep -f "$grep" > /dev/null; then
         IS_FLOATING=$(hyprctl clients -j | jq -r ".[] | select(.address==\"$WIN_ID\") | .floating")
         hyprctl dispatch focuswindow address:$WIN_ID
         if [ "$IS_FLOATING" = "false" ]; then
-            toggle_float
+            hyprctl dispatch togglefloating
+            hyprctl dispatch resizeactive exact 500 500
+            hyprctl dispatch centerwindow
         fi
         exit 0
     fi
@@ -33,7 +35,9 @@ else
             hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
             # Make it floating
             hyprctl dispatch focuswindow address:$WIN_ID
-            toggle_float
+            hyprctl dispatch togglefloating
+            hyprctl dispatch resizeactive exact 500 500
+            hyprctl dispatch centerwindow
             break
         fi
         sleep 0.2
