@@ -5,6 +5,7 @@
       # autostart
       exec-once = [
         # "hash dbus-update-activation-environment 2>/dev/null"
+        "hide_keepass_on_copy"
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
@@ -16,7 +17,6 @@
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
-        "hide_keepass_on_copy"
 
         "hyprlock"
       ];
