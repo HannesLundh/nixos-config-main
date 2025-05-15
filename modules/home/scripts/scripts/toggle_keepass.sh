@@ -2,12 +2,13 @@
 
 APP_NAME="KeePass2"
 CMD="/etc/profiles/per-user/hannes/bin/keepass"
+grep="KeePass"
 
 # Get the current workspace
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
 
 # Check if it's already running
-if pgrep -f "$CMD" > /dev/null; then
+if pgrep -f "$grep" > /dev/null; then
     # Find and manipulate window
     
     if [ -n "$WIN_ID" ]; then
@@ -19,7 +20,6 @@ if pgrep -f "$CMD" > /dev/null; then
         if [ "$IS_FLOATING" = "false" ]; then
             toggle_float
         fi
-        
         exit 0
     fi
 else
