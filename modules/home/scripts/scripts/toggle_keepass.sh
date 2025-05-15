@@ -15,9 +15,7 @@ if pgrep -f "$CMD" > /dev/null; then
         hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
         # Make it floating
         hyprctl dispatch focuswindow address:$WIN_ID
-        hyprctl dispatch toggle_float
-        # Focus and bring to top
-        hyprctl dispatch bringactivetotop
+        toggle_float
         exit 0
     fi
 else
