@@ -112,7 +112,7 @@ in
       onedrive
 
       # Keepass
-      keepass
+      keepassxc
 
       inputs.alejandra.defaultPackage.${system}
     ]
