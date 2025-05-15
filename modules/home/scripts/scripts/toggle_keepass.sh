@@ -10,7 +10,7 @@ CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
 # Check if it's already running
 if pgrep -f "$grep" > /dev/null; then
     # Find and manipulate window
-    
+    WIN_ID=$(hyprctl clients -j | jq -r ".[] | select(.class==\"$APP_NAME\") | .address")
     if [ -n "$WIN_ID" ]; then
         # Move KeePass to the active workspace (instead of moving focus)
         hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
