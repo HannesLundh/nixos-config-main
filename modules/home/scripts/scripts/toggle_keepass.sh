@@ -29,8 +29,10 @@ else
         WIN_ID=$(hyprctl clients -j | jq -r ".[] | select(.class==\"$APP_NAME\") | .address")
         if [ -n "$WIN_ID" ]; then
             hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
-            hyprctl dispatch floating enable,address:$WIN_ID
+            # Make it floating
             hyprctl dispatch focuswindow address:$WIN_ID
+            hyprctl dispatch toggle_float
+            # Focus and bring to top
             hyprctl dispatch bringactivetotop
             break
         fi
