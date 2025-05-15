@@ -1,7 +1,7 @@
 #!/bin/bash
 
 APP_NAME="KeePass2"
-CMD="keepass"
+CMD="/etc/profiles/per-user/hannes/bin/keepass"
 
 # Get the current workspace
 CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
@@ -9,14 +9,14 @@ CURRENT_WS=$(hyprctl activeworkspace -j | jq -r '.id')
 # Check if it's already running
 if pgrep -f "$CMD" > /dev/null; then
     # Find and manipulate window
-    WIN_ID=$(hyprctl clients -j | jq -r ".[] | select(.class==\"$APP_NAME\") | .address")
+    
     if [ -n "$WIN_ID" ]; then
         # Move KeePass to the active workspace (instead of moving focus)
         hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
         # Make it floating
-        hyprctl dispatch floating enable,address:$WIN_ID
-        # Focus and bring to top
         hyprctl dispatch focuswindow address:$WIN_ID
+        hyprctl dispatch toggle_float
+        # Focus and bring to top
         hyprctl dispatch bringactivetotop
         exit 0
     fi
