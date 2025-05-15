@@ -14,8 +14,12 @@ if pgrep -f "$CMD" > /dev/null; then
         # Move KeePass to the active workspace (instead of moving focus)
         hyprctl dispatch movetoworkspacesilent "$CURRENT_WS,address:$WIN_ID"
         # Make it floating
+        IS_FLOATING=$(hyprctl clients -j | jq -r ".[] | select(.address==\"$WIN_ID\") | .floating")
         hyprctl dispatch focuswindow address:$WIN_ID
-        toggle_float
+        if [ "$IS_FLOATING" = "false" ]; then
+            toggle_float
+        fi
+        
         exit 0
     fi
 else
