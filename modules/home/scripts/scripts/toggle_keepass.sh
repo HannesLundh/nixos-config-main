@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-APP_NAME="KeePassXC"
+APP_NAME="org.keepassxc.KeePassXC"
 CMD="/etc/profiles/per-user/hannes/bin/keepassxc"
 GREP="keepassxc"
 
