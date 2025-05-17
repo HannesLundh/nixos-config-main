@@ -21,6 +21,9 @@
       exec "$@"
     '')
     parsec-bin
+    vulkan-tools
+    vulkan-loader
+    vulkan-validation-layers
   ];
 
   networking.networkmanager.enable = true;

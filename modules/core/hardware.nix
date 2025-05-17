@@ -13,6 +13,7 @@ in
         vaapiVdpau
         libvdpau-va-gl
       ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [ libvdpau-va-gl ];
     };
   };
   hardware.enableRedistributableFirmware = true;
