@@ -26,7 +26,10 @@
     vulkan-validation-layers
   ];
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+  };
 
   services = {
     auto-epp.enable = true;
