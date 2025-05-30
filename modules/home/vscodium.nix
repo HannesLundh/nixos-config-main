@@ -38,6 +38,12 @@ in
         # ziglang.vscode-zig
         ziglang_vscode-zig
 
+        # GO
+        golang.go
+
+        # Prettier
+        esbenp.prettier-vscode
+
         # Color theme
         jdinhlife.gruvbox
         # sainnhe.gruvbox-material

@@ -24,6 +24,7 @@
     vulkan-tools
     vulkan-loader
     vulkan-validation-layers
+    go
   ];
 
   networking.networkmanager = {
