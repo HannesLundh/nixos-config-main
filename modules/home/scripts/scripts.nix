@@ -45,6 +45,7 @@ let
     builtins.readFile ./scripts/rofi-power-menu.sh
   );
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
+  fix_wifi = pkgs.writeScriptBin "fix_wifi" (builtins.readFile ./scripts/fix_wifi.sh);
 in
 {
   home.packages = with pkgs; [
@@ -80,5 +81,7 @@ in
 
     rofi-power-menu
     power-menu
+
+    fix_wifi
   ];
 }
