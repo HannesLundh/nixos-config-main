@@ -25,6 +25,8 @@
     vulkan-loader
     vulkan-validation-layers
     go
+    asusctl
+    supergfxctl
   ];
 
   networking.networkmanager = {
@@ -33,6 +35,7 @@
   };
 
   services = {
+    supergfxd.enable = true;
     auto-epp.enable = true;
 
     xserver.videoDrivers = [ "nvidia" ];
@@ -93,7 +96,11 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   boot = {
-    kernelModules = [ "acpi_call" ];
+    kernelModules = [
+      "acpi_call"
+      "asus_nb_wmi"
+      "asus_wmi"
+    ];
     extraModulePackages =
       with config.boot.kernelPackages;
       [
@@ -101,5 +108,15 @@
         cpupower
       ]
       ++ [ pkgs.cpupower-gui ];
+  };
+
+  systemd.services.asusd = {
+    description = "ASUS Control Daemon";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.asusctl}/bin/asusd";
+      Restart = "on-failure";
+    };
   };
 }
