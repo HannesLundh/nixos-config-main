@@ -46,6 +46,7 @@ let
   );
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
   fix_wifi = pkgs.writeScriptBin "fix_wifi" (builtins.readFile ./scripts/fix_wifi.sh);
+  toggle_epp = pkgs.writeScriptBin "toggle_epp" (builtins.readFile ./scripts/toggle_epp.sh);
 in
 {
   home.packages = with pkgs; [
@@ -83,5 +84,7 @@ in
     power-menu
 
     fix_wifi
+
+    toggle_epp
   ];
 }

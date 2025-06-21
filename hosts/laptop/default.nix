@@ -36,7 +36,7 @@
 
   services = {
     supergfxd.enable = true;
-    auto-epp.enable = true;
+    #auto-epp.enable = true;
 
     xserver.videoDrivers = [ "nvidia" ];
     blueman.enable = true;

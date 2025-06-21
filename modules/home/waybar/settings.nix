@@ -33,7 +33,10 @@ in
       "hyprland/workspaces"
       "tray"
     ];
-    modules-center = [ "clock" ];
+    modules-center = [
+      "clock"
+      "custom/epp"
+    ];
     modules-right = [
       "cpu"
       "memory"
@@ -54,6 +57,12 @@ in
       tooltip = "true";
       tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = "  {:%d/%m}";
+    };
+    "custom/epp" = {
+      format = "󰾅 {}";
+      exec = "toggle-epp";
+      on-click = "toggle-epp";
+      interval = 5;
     };
     "hyprland/workspaces" = {
       active-only = false;
